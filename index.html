@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="design.css"/>
+        <meta charset="utf-8">
+        <title>Conversão Y-Δ</title>
+    </head>
+    <body>
+        <h1>Conversão Y-Δ</h1>
+
+    <div id="container">
+        <table id ="esc-tab">
+            <tr>
+                <td>Impedância Modular</td>
+                <td>Impedância Complexa</td>
+            </tr>
+            <tr> 
+                <td><input type="radio" name="z-type" id="imp_mod"></td>
+                <td><input type="radio" name="z-type" id="imp_comp"></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+    <div id="container1">
+        <table id="tab-conv" >
+            <tr>
+            <td>
+                <span>Y-Δ</span>
+            </td>
+            <td>
+                <span>Δ-Y</span>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <input type="radio" name="esc" id="Y-Δ">
+            </td>
+            <td>
+                <input type="radio" name="esc" id="Δ-Y">
+            </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="container2">
+        <div id="i-est_i" hidden><img style="height:100px; width:100px;" src="estrela.png"/></div>
+        <div id="i-tri_i" hidden><img style="height:100px; width:100px;" src="triangulo.png"/></div><br>
+        <table id="valores-tab">
+            <tr>
+                <td>
+                    Impedância 1(Z<span style="font-size:12px;">1</span>):&nbsp;
+                </td>
+                <td>
+                    <input type="text" id="z1_in"/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Impedância 2(Z<span style="font-size:12px;">2</span>):&nbsp;
+                </td>
+                <td>
+                    <input type="text" id="z2_in"/>
+                </td>
+            </tr>
+                
+
+            <tr>
+                <td>
+                    Impedância 3(Z<span style="font-size:12px;">3</span>):&nbsp;
+                </td>
+                <td>
+                    <input type="text" id="z3_in"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="container3">
+        <input type="button" value="Calcular" id="botao" onclick="calcular()">
+    </div>
+
+    <div id="container4">
+        <div id="i-est_o" hidden><img style="height:100px; width:100px;" src="estrela.png"/></div>
+        <div id="i-tri_o" hidden><img style="height:100px; width:100px;" src="triangulo.png"/></div><br>
+
+        <table id="out-tab">
+            <tr>
+                <td>Impedância 1(Z<span style="font-size:12px;">1</span>):&nbsp;
+                </td>
+                <td>
+                    <input type="text" id="z1_out" class="val" disabled/>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Impedância 2(Z<span style="font-size:12px;">2</span>):&nbsp;
+                </td>
+                <td>
+                    <input type="text" id="z2_out" class="val" disabled/>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>Impedância 3(Z<span style="font-size:12px;">3</span>):&nbsp;
+                </td>
+                <td>
+                    <input type="text" id="z3_out" class="val" disabled/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+  	<input type="button" value="Detalhes" id="botao_rolldown" onclick="rolldown()">
+	<div id="rolldown" hidden>
+	<span>Note-se que o valor do fator de potência na conversão por <u>impedância modular</u> deve ser o mesmo, para posteriormente o rácio de P e Q serem também idênticos.</span><br><br>
+	<span>No método de <u>Impedância Modular</u> insira os valores no formato de módulo. (p. e. 51 --> sqrt(50^2+10^2)).</span><br><br>
+    <span>No método de <u>Impedância Complexa</u> insira os valores no formato de número complexo. (p. e. 50+j10).</span><br><br>
+    <span>Insira todos os dados para continuar.</span>  
+	</div>
+
+
+
+    <script src="logic.js"></script>
+
+    </body>
+</html>
